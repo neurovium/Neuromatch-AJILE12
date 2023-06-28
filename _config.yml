@@ -1,0 +1,4 @@
+repository:
+  url: https://github.com/neurovium/Neuromatch-AJILE12
+  path_to_book: Notebook/exploreAJILE12.ipynb
+  branch: master
