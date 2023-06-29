@@ -16,6 +16,6 @@ setup(
     author="Nima Dehghani",
     author_email="nima.dehghani@mit.edu",
     url="https://github.com/neurovium/Neuromatch-AJILE12",
-    packages=["plot_utils", "spec_utils"],
+    packages=["plot_utils"],
     install_requires=required,
 )
