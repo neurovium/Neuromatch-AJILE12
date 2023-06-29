@@ -1,9 +1,11 @@
 # streaming
 import fsspec
-from fsspec.implementations.cached import CachingFileSystem
+from fsspec.implementations.caching import CachingFileSystem
+
 fs = CachingFileSystem(
     fs=fsspec.filesystem("http")
 )
+
 
 # DANDI/NWB
 from pynwb import NWBHDF5IO
