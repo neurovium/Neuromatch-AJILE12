@@ -1,6 +1,5 @@
 
 # Streaming
-import fsspec
 from fsspec.implementations.cached import CachingFileSystem
 
 # Numerical

@@ -1,5 +1,5 @@
 # Streaming
-import fsspec
+from fsspec.implementations.caching import CachingFileSystem
 
 # Numerical 
 import natsort
