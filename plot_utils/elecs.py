@@ -1,6 +1,9 @@
 # Streaming
 import fsspec
-from fsspec.implementations.caching import CachingFileSystem
+from fsspec.implementations.cached import CachingFileSystem
+fs = CachingFileSystem(
+    fs=fsspec.filesystem("http")
+)
 
 # Numerical
 import numpy as np
@@ -73,13 +76,8 @@ def plot_ecog_descript(
             asset = client.get_dandiset("000055", "draft").get_asset_by_path(fids[0])
             s3_path = asset.get_content_url(follow_redirects=1, strip_query=True)
             
-
-            fs = CachingFileSystem(
-                fs=fsspec.filesystem("http")
-            )
-
-            f = fs.open(s3_path, "rb")
-            file = h5py.File(f)
+        f = fs.open(s3_path, "rb")
+        file = h5py.File(f)
         with NWBHDF5IO(file=file, mode='r', load_namespaces=True) as io:            
             nwb = io.read()
 
