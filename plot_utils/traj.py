@@ -1,11 +1,3 @@
-# # Streaming
-# import fsspec
-# from fsspec.implementations.caching import CachingFileSystem
-
-# fs = CachingFileSystem(
-#     fs=fsspec.filesystem("http")
-# )
-
 # Numerical
 import numpy as np
 import seaborn as sns

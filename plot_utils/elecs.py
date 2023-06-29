@@ -1,17 +1,9 @@
-# Streaming
-# import fsspec
-# from fsspec.implementations.caching import CachingFileSystem
-
-# fs = CachingFileSystem(
-#     fs=fsspec.filesystem("http")
-# )
-
-
 # Numerical
 import numpy as np
 import natsort
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
+import nilearn.plotting as ni_plt
 import h5py
 
 # General
