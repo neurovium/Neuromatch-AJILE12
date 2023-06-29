@@ -15,7 +15,7 @@ import numpy as np
 from tqdm import tqdm
 
 # local
-from elecs import identify_elecs
+from plot_utils.elecs import identify_elecs
 
 def load_data_characteristics(nparts=12):
     """Load data characteristics including the number of

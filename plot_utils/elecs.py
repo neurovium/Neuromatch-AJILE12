@@ -6,6 +6,7 @@ import numpy as np
 import natsort
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
+import h5py
 
 # General
 from tqdm import tqdm

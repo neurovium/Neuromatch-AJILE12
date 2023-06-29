@@ -8,6 +8,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
+import h5py
 from scipy.signal import medfilt
 from nilearn import plotting as ni_plt
 
