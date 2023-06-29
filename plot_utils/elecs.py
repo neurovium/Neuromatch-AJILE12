@@ -56,14 +56,15 @@ def plot_ecog_descript(
     ncols = nparts // nrows
     gs = gridspec.GridSpec(
         nrows=nrows,
-        ncols=ncols,
+        ncols=ncols,  # +2,
         figure=fig,
-        width_ratios=[width / ncols] * ncols,
+        width_ratios=[width / ncols]
+        * ncols,  # [width/ncols/2]*ncols+[width/10, 4*width/10],
         height_ratios=[height / nrows] * nrows,
         wspace=0,
         hspace=-0.5,
     )
-    ax = [None] * nparts
+    ax = [None] * (nparts)  # +1)
 
     for part_ind in tqdm(range(nparts)):
         # Load NWB data file
@@ -71,40 +72,41 @@ def plot_ecog_descript(
         with DandiAPIClient() as client:
             asset = client.get_dandiset("000055", "draft").get_asset_by_path(fids[0])
             s3_path = asset.get_content_url(follow_redirects=1, strip_query=True)
+            
 
-        fs = CachingFileSystem(
-            fs=fsspec.filesystem("http")
-        )
+            fs = CachingFileSystem(
+                fs=fsspec.filesystem("http")
+            )
 
-        f = fs.open(s3_path, "rb")
-        file = h5py.File(f)
-        with fsspec.open(s3_path, 'rb') as s3_file:
-            with NWBHDF5IO(file=file, mode='r', load_namespaces=True) as io:
-                nwb = io.read()
+            f = fs.open(s3_path, "rb")
+            file = h5py.File(f)
+        with NWBHDF5IO(file=file, mode='r', load_namespaces=True) as io:            
+            nwb = io.read()
 
-                # Determine hemisphere to display
-                if allLH:
-                    sides_2_display = "l"
-                else:
-                    average_xpos_sign = np.nanmean(nwb.electrodes["x"][:])
-                    sides_2_display = "r" if average_xpos_sign > 0 else "l"
+            # Determine hemisphere to display
+            if allLH:
+                sides_2_display = "l"
+            else:
+                average_xpos_sign = np.nanmean(nwb.electrodes["x"][:])
+                sides_2_display = "r" if average_xpos_sign > 0 else "l"
 
-                # Run electrode plotting function
-                ax[part_ind] = fig.add_subplot(gs[part_ind // ncols, part_ind % ncols])
-                plot_ecog_electrodes_mni_from_nwb_file(
-                    nwb,
-                    chan_labels,
-                    num_grid_chans=64,
-                    node_size=50,
-                    colors="silver",
-                    alpha=0.9,
-                    sides_2_display=sides_2_display,
-                    node_edge_colors="k",
-                    edge_linewidths=1.5,
-                    ax_in=ax[part_ind],
-                    allLH=allLH,
-                )
+            # Run electrode plotting function
+            ax[part_ind] = fig.add_subplot(gs[part_ind // ncols, part_ind % ncols])
+            plot_ecog_electrodes_mni_from_nwb_file(
+                nwb,
+                chan_labels,
+                num_grid_chans=64,
+                node_size=50,
+                colors="silver",
+                alpha=0.9,
+                sides_2_display=sides_2_display,
+                node_edge_colors="k",
+                edge_linewidths=1.5,
+                ax_in=ax[part_ind],
+                allLH=allLH,
+            )
 
+        del nwb, io
     #         ax[part_ind].text(-0.2,0.1,'P'+str(part_ind+1).zfill(2), fontsize=8)
     #     fig.text(0.1, 0.91, '(a) ECoG electrode positions', fontsize=10)
 
@@ -120,7 +122,6 @@ def plot_ecog_descript(
     #     ax[-1].set_ylabel('Number of electrodes', fontsize=9, labelpad=0)
     #     ax[-1].set_title('(b) Total/good electrodes per participant',
     #                     fontsize=10)
-
     plt.show()
     return fig
 
