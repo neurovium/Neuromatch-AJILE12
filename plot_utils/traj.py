@@ -1,10 +1,10 @@
-# Streaming
-import fsspec
-from fsspec.implementations.caching import CachingFileSystem
+# # Streaming
+# import fsspec
+# from fsspec.implementations.caching import CachingFileSystem
 
-fs = CachingFileSystem(
-    fs=fsspec.filesystem("http")
-)
+# fs = CachingFileSystem(
+#     fs=fsspec.filesystem("http")
+# )
 
 # Numerical
 import numpy as np
