@@ -47,6 +47,7 @@ def plot_ecog_descript(
     chan_labels="all",
     width=7,
     height=3,
+    fs=None
 ):
     """Plot ECoG electrode positions and identified noisy
     electrodes side by side."""

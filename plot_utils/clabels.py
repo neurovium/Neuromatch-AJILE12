@@ -27,7 +27,7 @@ from nwbwidgets.utils.timeseries import align_by_times, timeseries_time_to_ind
 import ndx_events
 
 def clabel_table_create(
-    common_acts, n_parts=12, data_lp="/data2/users/stepeter/files_nwb/downloads/000055/"
+    common_acts, n_parts=12, data_lp="/data2/users/stepeter/files_nwb/downloads/000055/", fs=None
 ):
     """Create table of coarse label durations across participants.
     Labels to include in the table are specified by common_acts."""

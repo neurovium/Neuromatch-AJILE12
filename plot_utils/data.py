@@ -23,7 +23,7 @@ from tqdm import tqdm
 # local
 from plot_utils.elecs import identify_elecs
 
-def load_data_characteristics(nparts=12):
+def load_data_characteristics(nparts=12, fs=None):
     """Load data characteristics including the number of
     good and total ECoG electrodes, hemisphere implanted,
     and number of recording days for each participant."""

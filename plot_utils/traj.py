@@ -67,7 +67,7 @@ def plot_wrist_trajs(
 
 
 def _get_wrist_trajs(
-    base_start=-1.5, base_end=-1, before=3, after=3, fs_video=30, n_parts=12
+    base_start=-1.5, base_end=-1, before=3, after=3, fs_video=30, n_parts=12, fs=None
 ):
     """Load in wrist trajectories around move onset events."""
     with DandiAPIClient() as client:
