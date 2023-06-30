@@ -11,7 +11,7 @@ For information on the data, see  **[AJILE12 dandiset on DANDI](https://dandiarc
 
 Run the ![📝 explore AJILE12Notebook](Notebook/exploreAJILE12.ipynb) to see more details on the scientific background, data handling and some exploratory analysis routines.
 
-The notebook (adapted/modified/extended from code by CatalystNeuro and original implementation by Steve Peterson [eNeuro paper](https://www.eneuro.org/content/8/3/ENEURO.0007-21.2021)) is designed as a guide for project template for [Computational Neurosciecne Course](https://compneuro.neuromatch.io/) of [Neuromatch Academy](https://academy.neuromatch.io/). For details about the project, see:
+The notebook (adapted/modified/extended from code by CatalystNeuro and original implementation by Steve Peterson [eNeuro paper](https://www.eneuro.org/content/8/3/ENEURO.0007-21.2021)) is designed as a guide for student projects in [Computational Neurosciecne Course](https://compneuro.neuromatch.io/) of [Neuromatch Academy](https://academy.neuromatch.io/). For details about the project, see:
 
 <img src="img/NeuromatchProject_AJILE12.png" width="1200">
 
