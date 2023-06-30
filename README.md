@@ -10,3 +10,7 @@ Includes code to plot figures from [data descriptor paper](https://www.nature.co
 
 
 Run the ![📝 explore AJILE12Notebook](Notebook/exploreAJILE12.ipynb) to see more details on the scientific background, data handling and some exploratory analysis routines.
+
+The notebook (adapted/modified from code by CatalystNeuro and original implementation by Steve Peterson)) is designed as a guide for project template for [Computational Neurosciecne Course](https://compneuro.neuromatch.io/) of [Neuromatch Academy](https://academy.neuromatch.io/). For details about the project, see:
+
+<img src="img/NeuromatchProject_AJILE12.png width="1200">
