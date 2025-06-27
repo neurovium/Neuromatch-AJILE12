@@ -1,2 +1,8 @@
 dandi==0.69.3
 pynwb==3.0.0
+scipy
+seaborn
+statsmodel
+natsort
+ndx_events
+
