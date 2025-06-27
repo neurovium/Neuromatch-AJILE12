@@ -1,6 +1,8 @@
 dandi==0.55.1
+seaborn==0.12.2
 numpy>=1.22.4,<2.0
-pandas
+pandas==1.5.3
+statsmodels==0.13.5
 scipy==1.10.1
 pynwb==2.3.3
 fsspec==2023.6.0
@@ -14,5 +16,3 @@ beautifulsoup4==4.12.2
 ipywidgets==7.7.1
 ndx_events==0.2.0
 nwbwidgets==0.7.0
-seaborn
-statsmodels
