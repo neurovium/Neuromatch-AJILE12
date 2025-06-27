@@ -1,18 +1,19 @@
-dandi==0.55.1
+dandi==0.69.3
 seaborn==0.12.2
-numpy>=1.22.4
-pandas
 statsmodels==0.13.5
-scipy==1.10.1
-pynwb==2.3.3
-fsspec==2023.6.0
-h5py==3.8.0
-hdmf==3.6.1
-nilearn==0.10.1
+pynwb==3.0.0
+h5py==3.12.1
+hdmf==4.1.0
+numpy==2.1.1; python_version > "3.9"  # numpy 2.1+ is not compatible with py3.9
+numpy==2.0.2; python_version == "3.9"
+pandas==2.2.3
+fsspec==2024.12.0
+requests==2.32.4
+nwbwidgets==0.10.2
+scipy==1.16.0
+nilearn==0.12.0
 natsort==8.3.1
 matplotlib==3.7.1
-requests==2.27.1
-beautifulsoup4==4.12.2
-ipywidgets==7.7.1
+beautifulsoup4==4.13.0
+ipywidgets==8.1.7
 ndx_events==0.2.0
-nwbwidgets==0.7.0
